@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  filebrowser:
+    image: hurlenko/filebrowser
+    container_name: filebrowser
+    ports:
+      - "8080:8080"
+    volumes:
+      - /home/user/documents:/data
+      - ./filebrowser/config:/config
+    environment:
+      - FB_BASEURL=/
+      - FB_NOAUTH=false  # เปิดการ login
+    restart: unless-stopped
