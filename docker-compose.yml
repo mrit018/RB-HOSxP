@@ -11,5 +11,8 @@ services:
       - ./filebrowser/config:/config
     environment:
       - FB_BASEURL=/
+      # กำหนด username/password ตั้งแต่แรก
+      - FB_AUTH_USERNAME=yourusername
+      - FB_AUTH_PASSWORD=yourpassword
       - FB_NOAUTH=false  # เปิดการ login
     restart: unless-stopped
